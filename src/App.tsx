@@ -1,112 +1,75 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
-
-// import { Routes, Route } from "react-router-dom";
+import { css, Global } from "@emotion/react";
+import { Routes, Route } from "react-router-dom";
 // import Home from "./pages/Home";
-// import About from "./pages/AboutMe";
-// import Projects from "./pages/Projects";
-// import Contact from "./pages/Contact";
-
-// function App() {
-//   return (
-//     <div>
-//       <nav>
-//         <ul>
-//           <li>
-//             <a href="/">Home</a>
-//           </li>
-//           <li>
-//             <a href="/about">About</a>
-//           </li>
-//           <li>
-//             <a href="/projects">Projects</a>
-//           </li>
-//           <li>
-//             <a href="/contact">Contact</a>
-//           </li>
-//         </ul>
-//       </nav>
-
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/projects" element={<Projects />} />
-//         <Route path="/contact" element={<Contact />} />
-//       </Routes>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import { Routes, Route, NavLink } from "react-router-dom";
-import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
-      {/* 네비게이션 */}
-      <nav className="navbar">
-        <NavLink to="/" className="nav-link">
-          Home
-        </NavLink>
-        <NavLink to="/about" className="nav-link">
-          About Me
-        </NavLink>
-        <NavLink to="/projects" className="nav-link">
-          Projects
-        </NavLink>
-        <NavLink to="/contact" className="nav-link">
-          Contact
-        </NavLink>
-      </nav>
+    <>
+      <Global styles={globalStyles} />
+      <div css={appStyle}>
+        {/* 헤더 */}
+        <Header />
 
-      {/* 라우팅 */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutMe />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </div>
+        {/* 메인 콘텐츠 */}
+        <main css={mainContentStyle}>
+          <div css={contentContainerStyle}>
+            <Routes>
+              <Route path="/" element={<AboutMe />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+        </main>
+
+        {/* 푸터 */}
+        <Footer />
+      </div>
+    </>
   );
 }
+
+const globalStyles = css`
+  /* body와 #root 스타일 */
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* 화면 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: white;
+  }
+
+  #root {
+    /* 전체 레이아웃 중앙 정렬 */
+    margin: 0 auto;
+  }
+`;
+
+const appStyle = css`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+`;
+
+const mainContentStyle = css`
+  flex: 1;
+  margin-top: 50px; /* 헤더 높이만큼 여백 추가 */
+`;
+
+const contentContainerStyle = css`
+  width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+  // background-color: white;
+  // border: 1px solid #d3d3d3;
+`;
 
 export default App;
