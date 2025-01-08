@@ -39,7 +39,6 @@ const globalStyles = css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* 좌우 스크롤 방지 */
   }
 
   #root {
@@ -59,7 +58,10 @@ const mainContentStyle = css`
   flex: 1;
   margin-top: 60px; /* 헤더 높이에 맞춘 여백 */
   padding: 20px;
-  overflow-x: hidden; /* 좌우 스크롤 방지 */
+
+  @media (max-width: 768px) {
+    overflow-x: auto; /* 모바일에서 좌우 스크롤 허용 */
+  }
 `;
 
 const contentContainerStyle = css`
