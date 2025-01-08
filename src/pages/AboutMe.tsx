@@ -86,8 +86,10 @@ function AboutMe() {
 }
 
 const container = css`
-  max-width: 1140px;
+  max-width: 100%; /* 부모 요소 크기 초과 방지 */
   margin: 0 auto;
+  padding: 0 20px; /* 화면 여백 추가 */
+  box-sizing: border-box; /* 패딩 포함 너비 계산 */
 `;
 
 const headerSection = css`

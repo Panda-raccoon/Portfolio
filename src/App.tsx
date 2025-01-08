@@ -37,18 +37,14 @@ const globalStyles = css`
   /* body와 #root 스타일 */
   body {
     margin: 0;
-    display: flex;
-    justify-content: center; /* 화면 가운데 정렬 */
-    align-items: center; /* 수직 가운데 정렬 */
-    min-width: 320px;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: white;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* 좌우 스크롤 방지 */
   }
 
   #root {
-    /* 전체 레이아웃 중앙 정렬 */
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -61,7 +57,9 @@ const appStyle = css`
 
 const mainContentStyle = css`
   flex: 1;
-  margin-top: 50px; /* 헤더 높이만큼 여백 추가 */
+  margin-top: 60px; /* 헤더 높이에 맞춘 여백 */
+  padding: 20px;
+  overflow-x: hidden; /* 좌우 스크롤 방지 */
 `;
 
 const contentContainerStyle = css`

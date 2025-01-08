@@ -60,7 +60,7 @@ const contactPage = css`
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 30px;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   margin: 100px auto;
 `;

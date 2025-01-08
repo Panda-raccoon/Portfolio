@@ -46,7 +46,7 @@ const headerStyle = css`
   height: 60px;
   background-color: white;
   border-bottom: 1px solid #a6aebf;
-  z-index: 1000;
+  z-index: 10;
 `;
 
 const headerContentStyle = css`

@@ -13,7 +13,7 @@ function Footer() {
 const footerStyle = css`
   text-align: center;
   background-color: #a6aebf;
-  width: 100vw; /* 브라우저 전체 너비로 설정 */
+  width: 100%;
   color: white;
   padding: 15px 0;
 `;
