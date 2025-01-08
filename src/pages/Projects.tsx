@@ -1,6 +1,16 @@
 import { css } from "@emotion/react";
 import { useState } from "react";
 
+// 파일 import
+import tradelyVideo from "../assets/(2ven)Tradely_Video.mp4";
+import tradelyImage from "../assets/tradely_img.jpg";
+import maziHomeGif from "../assets/MAZI_home.gif";
+import maziDetailGif from "../assets/MAZI_detail.gif";
+import maziBookmarkGif from "../assets/MAZI_bookmark.gif";
+import maziProfileGif from "../assets/MAZI_profile.gif";
+import maziImage from "../assets/MAZI_img.jpeg";
+import starbucksImage from "../assets/starbucks.png";
+
 // Media 타입 정의
 interface Media {
   type: "video" | "gif";
@@ -19,30 +29,29 @@ function Projects() {
   }[] = [
     {
       id: 1,
-      title: "투자 매매전략을 공유하고 중개하는 소셜 플랫폼, 트레들리",
-      image:
-        "https://private-user-images.githubusercontent.com/89791868/394660639-7e788c67-cc37-4206-b4b6-a4db7a4e500e.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzYzMjEzMTksIm5iZiI6MTczNjMyMTAxOSwicGF0aCI6Ii84OTc5MTg2OC8zOTQ2NjA2MzktN2U3ODhjNjctY2MzNy00MjA2LWI0YjYtYTRkYjdhNGU1MDBlLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTA4VDA3MjMzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThlNWYyZTZlMjlkNDM1MWI1ODk5YjYzYTBhM2U5ZDcxMzY5OGFjMWE4YWUwZWEwYmY0M2U2MjVjNTZlMGQ0MjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.KbqZfC6pen8gq8zckUxBCQojS0d9PRRy1G1hyCVxtzg",
+      title: "투자 매매전략을 공유하고 중개하는 소셜 플랫폼, 트레들리(TEAM)",
+      image: tradelyImage, // import한 파일 사용
       githubLink: "https://github.com/Panda-raccoon/FinalProject_2VEN_FE",
-      media: [{ type: "video", src: "src/assets/(2ven)Tradely_Video.mp4" }],
+      media: [{ type: "video", src: tradelyVideo }],
     },
     {
       id: 2,
-      title: "운동 영상 공유 SNS 플랫폼, MAZI",
-      image:
-        "https://private-user-images.githubusercontent.com/170427166/371165258-9939cb73-b2d7-4806-9617-574aeb795c15.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzYzMjE3MDgsIm5iZiI6MTczNjMyMTQwOCwicGF0aCI6Ii8xNzA0MjcxNjYvMzcxMTY1MjU4LTk5MzljYjczLWIyZDctNDgwNi05NjE3LTU3NGFlYjc5NWMxNS5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDEwOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTAxMDhUMDczMDA4WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NmJhNzJhYTE5YjJhODZmZDQwNzk3MTEyNTFlZjNjYjIzNDkwZTVhNWJmZGY4YzAwZjFhMDYzNjU4NTZiZjc3ZiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.CT3aHTnyXH8Y2LSSFkJrLnwkekWrjRwM3rqopnHKeV0",
+      title: "운동 영상 공유 SNS 플랫폼, MAZI(TEAM)",
+      image: maziImage, // import한 파일 사용
       githubLink:
         "https://github.com/Panda-raccoon/Toy_Project_3_BeginAgain?tab=readme-ov-file/",
       media: [
-        { type: "gif", src: "src/assets/MAZI_home.gif" },
-        { type: "gif", src: "src/assets/MAZI_bookmark.gif" },
+        { type: "gif", src: maziHomeGif },
+        { type: "gif", src: maziBookmarkGif },
+        { type: "gif", src: maziDetailGif },
+        { type: "gif", src: maziProfileGif },
       ],
     },
     {
       id: 3,
       title: "스타벅스",
-      image: "src/assets/starbucks.png",
+      image: starbucksImage, // import한 파일 사용
       githubLink: "https://github.com/Panda-raccoon/starbucks",
-      // media가 정의되지 않음
     },
   ];
 
@@ -171,19 +180,6 @@ const buttonWrapper = css`
   transition: opacity 0.3s ease;
 `;
 
-// const demoButton = css`
-//   background-color: #85637f;
-//   color: #fff;
-//   padding: 10px 15px;
-//   border-radius: 5px;
-//   text-decoration: none;
-//   font-size: 14px;
-
-//   &:hover {
-//     background-color: #7f5069;
-//   }
-// `;
-
 const liveButton = css`
   background-color: #85637f;
   color: #fff;
@@ -243,13 +239,13 @@ const fullScreenContent = css`
 
 const mediaRow = css`
   display: flex;
-  gap: 20px; /* 요소 간 간격 */
+  gap: 20px;
   justify-content: center;
   align-items: center;
 `;
 
 const sideBySideMedia = css`
-  max-width: 45%; /* 좌우로 배치할 때의 너비 */
+  max-width: 45%;
   max-height: 80%;
   border-radius: 10px;
 `;
