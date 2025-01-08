@@ -43,7 +43,7 @@ const headerStyle = css`
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
   background-color: white;
   border-bottom: 1px solid #a6aebf;
   z-index: 1000;

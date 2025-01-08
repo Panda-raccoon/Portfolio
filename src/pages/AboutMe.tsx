@@ -94,14 +94,14 @@ const headerSection = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff8de;
+  background-color: #ffedcb;
   padding: 32px;
   border-radius: 20px;
 `;
 
 const contentWrapper = css`
   flex: 1;
-  padding: 32px;
+  padding: 40px;
   // border: 1px solid green; /* 박스 */
 `;
 
@@ -160,7 +160,8 @@ const profileImg = css`
   width: 100%;
   height: auto;
   object-fit: cover;
-  // border: 1px solid blue; /* 박스 */
+  border: 5px solid #f1faff; /* 하얀색 테두리 추가 */
+  border-radius: 10px; /* 둥근 모서리 추가 */
 `;
 
 const skillsSection = css`
