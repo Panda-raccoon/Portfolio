@@ -39,14 +39,10 @@ function Header() {
 // `;
 
 const headerStyle = css`
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 60px;
+  min-width: 1140px; /* 스크롤에 맞춰 최소 너비 설정 */
   background-color: white;
   border-bottom: 1px solid #a6aebf;
-  z-index: 10;
 `;
 
 const headerContentStyle = css`
@@ -55,7 +51,7 @@ const headerContentStyle = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 60px;
   padding: 0 20px;
 `;
 

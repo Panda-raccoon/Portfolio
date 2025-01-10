@@ -52,16 +52,14 @@ const appStyle = css`
   flex-direction: column;
   min-height: 100vh;
   background-color: white;
+  overflow-x: auto; /* 전체 페이지 좌우 스크롤 가능 */
+  // width: 100%; /* 페이지 전체 너비 */
 `;
 
 const mainContentStyle = css`
   flex: 1;
   margin-top: 60px; /* 헤더 높이에 맞춘 여백 */
   padding: 20px;
-
-  @media (max-width: 768px) {
-    overflow-x: auto; /* 모바일에서 좌우 스크롤 허용 */
-  }
 `;
 
 const contentContainerStyle = css`

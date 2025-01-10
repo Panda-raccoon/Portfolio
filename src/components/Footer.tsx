@@ -11,15 +11,16 @@ function Footer() {
 }
 
 const footerStyle = css`
-  text-align: center;
-  background-color: #a6aebf;
   width: 100%;
+  min-width: 1140px; /* 스크롤에 맞춰 최소 너비 설정 */
+  background-color: #a6aebf;
+  text-align: center;
   color: white;
   padding: 15px 0;
 `;
 
 const footerContentStyle = css`
-  max-width: 1140px; /* 콘텐츠 폭 제한 */
+  max-width: 1140px;
   margin: 0 auto;
 `;
 

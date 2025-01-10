@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import ProfileImage from "../assets/panda_cloud.png";
+import ProfileImage from "../assets/Character.jpg";
 
 function AboutMe() {
   return (
@@ -35,49 +35,49 @@ function AboutMe() {
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
               alt="HTML"
             />
-            <span className="skill-name">HTML</span>
+            <p className="skill-name">HTML</p>
           </div>
           <div className="skill-item">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
               alt="CSS"
             />
-            <span className="skill-name">CSS</span>
+            <p className="skill-name">CSS</p>
           </div>
           <div className="skill-item">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
               alt="JavaScript"
             />
-            <span className="skill-name">JavaScript</span>
+            <p className="skill-name">JavaScript</p>
           </div>
           <div className="skill-item">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
               alt="React"
             />
-            <span className="skill-name">React</span>
+            <p className="skill-name">React</p>
           </div>
           <div className="skill-item">
             <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-              alt="VSCode"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+              alt="TypeScript"
             />
-            <span className="skill-name">VSCode</span>
+            <p className="skill-name">TypeScript</p>
           </div>
           <div className="skill-item">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
               alt="Git"
             />
-            <span className="skill-name">Git</span>
+            <p className="skill-name">Git</p>
           </div>
           <div className="skill-item">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
               alt="GitHub"
             />
-            <span className="skill-name">GitHub</span>
+            <p className="skill-name">GitHub</p>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ const headerSection = css`
 
 const contentWrapper = css`
   flex: 1;
-  padding: 40px;
+  padding: 0 40px;
   // border: 1px solid green; /* 박스 */
 `;
 
@@ -162,7 +162,7 @@ const profileImg = css`
   width: 100%;
   height: auto;
   object-fit: cover;
-  border: 5px solid #f1faff; /* 하얀색 테두리 추가 */
+
   border-radius: 10px; /* 둥근 모서리 추가 */
 `;
 
@@ -174,14 +174,14 @@ const skillsSection = css`
 const skillsTitle = css`
   font-size: 32px;
   color: #3f4756;
-  margin-bottom: 32px;
+  margin: 0 0 32px;
 `;
 
 const skillsGrid = css`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 32px;
-  max-width: 800px;
+  // max-width: 800px;
   margin: 0 auto;
 
   img {
