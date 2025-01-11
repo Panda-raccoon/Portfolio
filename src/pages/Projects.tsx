@@ -26,6 +26,7 @@ function Projects() {
     image: string;
     githubLink: string;
     media?: Media[]; // media를 선택적으로 정의
+    site?: string;
   }[] = [
     {
       id: 1,
@@ -52,10 +53,28 @@ function Projects() {
       title: "스타벅스",
       image: starbucksImage, // import한 파일 사용
       githubLink: "https://github.com/Panda-raccoon/starbucks",
+      site: "https://classy-faloodeh-9fc243.netlify.app/", // site URL 추가
     },
   ];
 
-  const openFullScreen = (media: Media[] | undefined) => {
+  // const openFullScreen = (media: Media[] | undefined) => {
+  //   if (media) {
+  //     setSelectedMedia(media);
+  //     document.body.style.overflow = "hidden"; // 스크롤 방지
+  //   }
+  // };
+
+  // const closeFullScreen = () => {
+  //   setSelectedMedia(null);
+  //   document.body.style.overflow = "auto"; // 스크롤 복원
+  // };
+
+  const openFullScreen = (media: Media[] | undefined, site?: string) => {
+    if (site) {
+      window.open(site, "_blank"); // site URL 새 창에서 열기
+      return;
+    }
+
     if (media) {
       setSelectedMedia(media);
       document.body.style.overflow = "hidden"; // 스크롤 방지
@@ -77,9 +96,9 @@ function Projects() {
               <img src={project.image} alt={project.title} css={projectImage} />
               <div css={buttonWrapper}>
                 <button
-                  onClick={() => openFullScreen(project.media)}
+                  onClick={() => openFullScreen(project.media, project.site)} // site URL도 전달
                   css={liveButton}
-                  disabled={!project.media} // media가 없을 경우 버튼 비활성화
+                  disabled={!project.media && !project.site} // media와 site가 없으면 버튼 비활성화
                 >
                   More
                 </button>
