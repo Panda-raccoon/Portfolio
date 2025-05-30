@@ -10,6 +10,7 @@ import maziBookmarkGif from "../assets/MAZI_bookmark.gif";
 import maziProfileGif from "../assets/MAZI_profile.gif";
 import maziImage from "../assets/MAZI_img.jpeg";
 import starbucksImage from "../assets/starbucks.png";
+import geminiChatbotImage from "../assets/gemini_chatbot.png";
 
 // Media 타입 정의
 interface Media {
@@ -54,6 +55,13 @@ function Projects() {
       image: starbucksImage, // import한 파일 사용
       githubLink: "https://github.com/Panda-raccoon/starbucks",
       site: "https://classy-faloodeh-9fc243.netlify.app/", // site URL 추가
+    },
+    {
+      id: 4,
+      title: "GEMINI기반 챗봇",
+      image: geminiChatbotImage, // import한 파일 사용
+      githubLink: "https://github.com/Panda-raccoon/gemini_chatbot",
+      site: "https://geminichatbot-gsozzxqix4vvo9amgjg3nd.streamlit.app/", // site URL 추가
     },
   ];
 
