@@ -1,6 +1,8 @@
 import { css } from "@emotion/react";
 import { useState } from "react";
 
+import { colors, media } from "../styles/theme";
+
 // 파일 import
 import tradelyVideo from "../assets/(2ven)Tradely_Video.mp4";
 import tradelyImage from "../assets/tradely_img.jpg";
@@ -11,6 +13,7 @@ import maziProfileGif from "../assets/MAZI_profile.gif";
 import maziImage from "../assets/MAZI_img.jpeg";
 import starbucksImage from "../assets/starbucks.png";
 import geminiChatbotImage from "../assets/gemini_chatbot.png";
+import ocialImage from "../assets/ocial_img.png";
 
 // Media 타입 정의
 interface Media {
@@ -25,10 +28,16 @@ function Projects() {
     id: number;
     title: string;
     image: string;
-    githubLink: string;
+    githubLink?: string;
     media?: Media[]; // media를 선택적으로 정의
     site?: string;
   }[] = [
+    {
+      id: 0,
+      title: "커뮤니티 스토리 플랫폼, OCIAL (2025)",
+      image: ocialImage,
+      site: "https://ocial.io/",
+    },
     {
       id: 1,
       title: "투자 매매전략을 공유하고 중개하는 소셜 플랫폼, 트레들리(TEAM)",
@@ -110,14 +119,16 @@ function Projects() {
                 >
                   More
                 </button>
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  css={githubButton}
-                >
-                  GitHub
-                </a>
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    css={githubButton}
+                  >
+                    GitHub
+                  </a>
+                )}
               </div>
             </div>
             <h3 css={projectTitle}>{project.title}</h3>
@@ -160,7 +171,11 @@ const pageTitle = css`
   font-size: 32px;
   font-weight: bold;
   margin: 20px;
-  color: #3f4756;
+  color: ${colors.textMuted};
+
+  ${media.mobile} {
+    font-size: 24px;
+  }
 `;
 
 const projectsContainer = css`
@@ -168,15 +183,28 @@ const projectsContainer = css`
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
+
+  ${media.tablet} {
+    grid-template-columns: 1fr;
+  }
+
+  @media print {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const projectCard = css`
-  background-color: #727a8a;
-  color: #fff;
+  background-color: ${colors.textMuted};
+  color: ${colors.background};
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   text-align: center;
+
+  @media print {
+    page-break-inside: avoid;
+    border: 1px solid ${colors.border};
+  }
 `;
 
 const imageWrapper = css`
@@ -205,10 +233,18 @@ const buttonWrapper = css`
   gap: 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
+
+  @media print {
+    position: static;
+    transform: none;
+    opacity: 1;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
 `;
 
 const liveButton = css`
-  background-color: #85637f;
+  background-color: ${colors.accent};
   color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
@@ -217,7 +253,12 @@ const liveButton = css`
   cursor: pointer;
 
   &:hover {
-    background-color: #7f5069;
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    background-color: #9a9cb2;
+    cursor: default;
   }
 `;
 
@@ -230,7 +271,7 @@ const githubButton = css`
   font-size: 14px;
 
   &:hover {
-    background-color: #9189a4;
+    background-color: #7f5069;
   }
 `;
 
