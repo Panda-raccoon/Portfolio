@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import ProfileImage from "../assets/Character.jpg";
+import { colors, media } from "../styles/theme";
 
 function AboutMe() {
   return (
@@ -15,10 +16,12 @@ function AboutMe() {
           <div css={aboutSection}>
             <h2 css={aboutTitle}>About Me</h2>
             <p css={aboutText}>
-              안녕하세요, 프론트엔드 개발자 이연지입니다.
+              안녕하세요, 끝없이 배우고 성장하는 프론트엔드 개발자 이연지입니다.
               <br />
-              끊임없는 배움을 즐기며, 성장하고 발전하고 있는 개발자입니다.
+              새로운 기술을 스스로 학습하고 실제 서비스에 적용해보며 조금씩 실력을 쌓아온
+              개발자입니다.
               <br />
+              하나의 프로젝트마다 깊이 있게 이해하고 코드로 남기는 것을 중요하게 생각합니다.
             </p>
           </div>
         </div>
@@ -67,6 +70,20 @@ function AboutMe() {
           </div>
           <div className="skill-item">
             <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/styledcomponents/styledcomponents-original.svg"
+              alt="styled-components"
+            />
+            <p className="skill-name">styled-components</p>
+          </div>
+          <div className="skill-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+              alt="Supabase"
+            />
+            <p className="skill-name">Supabase</p>
+          </div>
+          <div className="skill-item">
+            <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
               alt="Git"
             />
@@ -86,84 +103,102 @@ function AboutMe() {
 }
 
 const container = css`
-  max-width: 100%; /* 부모 요소 크기 초과 방지 */
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 20px; /* 화면 여백 추가 */
-  box-sizing: border-box; /* 패딩 포함 너비 계산 */
+  padding: 0 20px;
+  box-sizing: border-box;
 `;
 
 const headerSection = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffedcb;
+  background-color: ${colors.backgroundAlt};
   padding: 32px;
   border-radius: 20px;
+
+  ${media.tablet} {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 `;
 
 const contentWrapper = css`
   flex: 1;
   padding: 0 40px;
-  // border: 1px solid green; /* 박스 */
+
+  ${media.tablet} {
+    padding: 24px 0 0;
+  }
 `;
 
 const titleSection = css`
   text-align: end;
   margin-bottom: 32px;
-  // border: 1px solid orange; /* 박스 */
+
+  ${media.tablet} {
+    text-align: center;
+  }
 `;
 
 const nameTitle = css`
   font-size: 40px;
-  color: #3f4756;
+  color: ${colors.textMuted};
   margin: 0;
-  // border: 1px solid orange; /* 박스 */
+
+  ${media.mobile} {
+    font-size: 28px;
+  }
 `;
 
 const jobTitle = css`
   font-size: 19px;
-  color: #333;
+  color: ${colors.text};
   margin: 8px 0;
-  // border: 1px solid blue; /* 박스 */
 `;
 
 const divider = css`
   border: none;
-  border-top: 2px solid #4834d4;
-  width: 700px;
+  border-top: 2px solid ${colors.accent};
+  width: 100%;
+  max-width: 700px;
   margin: 16px auto;
 `;
 
 const aboutSection = css`
   margin-top: 32px;
-  // border: 1px solid blue; /* 박스 */
 `;
 
 const aboutTitle = css`
   font-size: 32px;
-  color: #3f4756;
+  color: ${colors.textMuted};
   margin-bottom: 16px;
-  // border: 1px solid blue; /* 박스 */
+
+  ${media.mobile} {
+    font-size: 24px;
+  }
 `;
 
 const aboutText = css`
   font-size: 16px;
   line-height: 24px;
-  color: #333;
+  color: ${colors.text};
 `;
 
 const imageWrapper = css`
   flex: 1;
   max-width: 300px;
-  // border: 3px solid orange; /* 박스 */
+
+  ${media.tablet} {
+    max-width: 200px;
+  }
 `;
 
 const profileImg = css`
   width: 100%;
   height: auto;
   object-fit: cover;
-
-  border-radius: 10px; /* 둥근 모서리 추가 */
+  border-radius: 10px;
 `;
 
 const skillsSection = css`
@@ -173,16 +208,29 @@ const skillsSection = css`
 
 const skillsTitle = css`
   font-size: 32px;
-  color: #3f4756;
+  color: ${colors.textMuted};
   margin: 0 0 32px;
+
+  ${media.mobile} {
+    font-size: 24px;
+  }
 `;
 
 const skillsGrid = css`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 32px;
-  // max-width: 800px;
   margin: 0 auto;
+
+  ${media.tablet} {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  ${media.mobile} {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
 
   img {
     width: 60px;
@@ -192,6 +240,16 @@ const skillsGrid = css`
     &:hover {
       transform: scale(1.1);
     }
+
+    ${media.mobile} {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  .skill-name {
+    font-size: 14px;
+    color: ${colors.text};
   }
 `;
 
