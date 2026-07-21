@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { colors } from "../styles/theme";
 
 function Footer() {
   return (
@@ -12,16 +13,21 @@ function Footer() {
 
 const footerStyle = css`
   width: 100%;
-  min-width: 1140px; /* 스크롤에 맞춰 최소 너비 설정 */
-  background-color: #a6aebf;
+  background-color: ${colors.textMuted};
   text-align: center;
-  color: white;
+  color: ${colors.background};
   padding: 15px 0;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const footerContentStyle = css`
   max-width: 1140px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 `;
 
 export default Footer;
