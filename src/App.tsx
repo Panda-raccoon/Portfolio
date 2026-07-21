@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { colors, media } from "./styles/theme";
 
 function App() {
   return (
@@ -34,16 +35,22 @@ function App() {
 }
 
 const globalStyles = css`
-  /* body와 #root 스타일 */
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
   #root {
     width: 100%;
     height: 100%;
+  }
+
+  @media print {
+    body {
+      background: #ffffff;
+    }
   }
 `;
 
@@ -51,23 +58,29 @@ const appStyle = css`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: white;
-  overflow-x: auto; /* 전체 페이지 좌우 스크롤 가능 */
-  // width: 100%; /* 페이지 전체 너비 */
+  background-color: ${colors.background};
 `;
 
 const mainContentStyle = css`
   flex: 1;
-  margin-top: 60px; /* 헤더 높이에 맞춘 여백 */
+  margin-top: 60px;
   padding: 20px;
+
+  @media print {
+    margin-top: 0;
+  }
 `;
 
 const contentContainerStyle = css`
-  width: 1140px;
+  max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
-  // background-color: white;
-  // border: 1px solid #d3d3d3;
+  box-sizing: border-box;
+
+  ${media.mobile} {
+    padding: 12px;
+  }
 `;
 
 export default App;
