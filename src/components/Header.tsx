@@ -19,6 +19,7 @@ function Header() {
           css={menuButtonStyle}
           onClick={() => setMenuOpen((open) => !open)}
           aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? "✕" : "☰"}
         </button>
