@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { FaEnvelope, FaPhoneAlt, FaGithub } from "react-icons/fa";
 import { SiTistory } from "react-icons/si";
+import { colors, media } from "../styles/theme";
 
 function Contact() {
   return (
@@ -52,17 +53,33 @@ const pageTitle = css`
   font-size: 32px;
   font-weight: bold;
   margin: 20px;
-  color: #3f4756;
+  color: ${colors.textMuted};
+
+  ${media.mobile} {
+    font-size: 24px;
+    margin: 12px;
+  }
 `;
 
 const contactPage = css`
-  background-color: #ffffff;
+  background-color: ${colors.background};
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 30px;
   width: 100%;
   max-width: 600px;
   margin: 100px auto;
+
+  ${media.tablet} {
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  @media print {
+    box-shadow: none;
+    border: 1px solid ${colors.border};
+    margin: 20px auto;
+  }
 `;
 
 const contactList = css`
@@ -79,22 +96,31 @@ const contactItem = css`
   align-items: center;
   gap: 40px;
   font-size: 18px;
-  color: #242c39;
+  color: ${colors.text};
+
+  ${media.mobile} {
+    gap: 20px;
+    font-size: 15px;
+  }
 
   a {
     text-decoration: none;
-    color: #3f4756;
+    color: ${colors.textMuted};
     word-break: break-word;
 
     &:hover {
-      color: #99accf;
+      color: ${colors.accent};
     }
   }
 `;
 
 const iconStyle = css`
   font-size: 28px;
-  color: #242c39;
+  color: ${colors.text};
+
+  ${media.mobile} {
+    font-size: 22px;
+  }
 `;
 
 const divider = css`
