@@ -216,12 +216,21 @@ const imageWrapper = css`
   &:hover div {
     opacity: 1;
   }
+
+  @media print {
+    height: auto;
+    overflow: visible;
+  }
 `;
 
 const projectImage = css`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @media print {
+    height: 200px;
+  }
 `;
 
 const buttonWrapper = css`
